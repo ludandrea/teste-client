@@ -1,0 +1,27 @@
+<h1>{{actionType}} blog post</h1>
+<form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Nome</label>
+        <div class="col-md-12">
+            <input class="form-control" type="text" formControlName="nome">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Data e Hora</label>
+        <div class="col-md-12">
+            <input class="form-control" type="datetime-local" formControlName="registro">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Entrada ou saida</label>
+        <div class="col-md-12">
+            <select class="form-control" formControlName="indicador">
+                <option value="e">Entrada</option>
+                <option value="s">Saida</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success float-right">Save</button>
+    </div>
+</form>

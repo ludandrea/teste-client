@@ -1,0 +1,21 @@
+<h1>Senac Registros de Ponto</h1>
+<select class="form-control" (change)="filtraRegistros($event.target.value)">
+    <option></option>
+    <option *ngFor="let registro of registros">{{registro.nome}}</option>
+</select>
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Dia</th>
+            <th>Horas Trabalhadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let registro of registrosSelecionados">
+            <td>{{ registro.nome }}</td>
+            <td>{{ registro.dia }}</td>
+            <td>{{ registro.horasTrabalhadas}}</td>
+        </tr>
+    </tbody>
+</table>
